@@ -1,7 +1,7 @@
 FROM nginx:1.17-alpine
 
+ENV PROJECT_HOSTNAME project.example.com
 ENV NGINX_ROOT /var/www/html/public
-## Hostname: php-fpm (docker service name)
 ENV NGINX_FASTCGI_HOSTNAME php-fpm
 ENV NGINX_FASTCGI_PORT 9000
 
