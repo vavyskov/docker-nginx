@@ -4,8 +4,9 @@ ENV PROJECT_HOSTNAME project.example.com
 ENV NGINX_ROOT /var/www/html/public
 ENV NGINX_FASTCGI_HOSTNAME php-fpm
 ENV NGINX_FASTCGI_PORT 9000
-ENV SSL_CERTIFICATE /etc/ssl/path/project.crt
-ENV SSL_CERTIFICATE_KEY /etc/ssl/path/project.key
+ENV CERTIFICATE_PATH /etc/ssl/path
+ENV CERTIFICATE_FILENAME project.crt
+ENV CERTIFICATE_KEYNAME project.key
 
 COPY config/nginx.conf /etc/nginx/
 COPY config/default.template.conf /etc/nginx/conf.d/default.template
