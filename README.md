@@ -5,8 +5,8 @@
 
 ## Environment variables
 - `NGINX_ROOT /var/www/html/public`
-- `NGINX_FASTCGI_HOSTNAME php-fpm`
-- `NGINX_FASTCGI_PORT 9000`
+- `FASTCGI_HOSTNAME php-fpm`
+- `FASTCGI_PORT 9001`
 
 Notes:
 - `nginx -t` - test konfigurace

@@ -2,8 +2,8 @@ FROM nginx:1.17-alpine
 
 ENV PROJECT_HOSTNAME project.example.com
 ENV NGINX_ROOT /var/www/html/public
-ENV NGINX_FASTCGI_HOSTNAME php-fpm
-ENV NGINX_FASTCGI_PORT 9000
+ENV FASTCGI_HOSTNAME php-fpm
+ENV FASTCGI_PORT 9001
 ENV CERTIFICATE_PATH /etc/ssl/path
 ENV CERTIFICATE_FILENAME project-example-com.crt
 ENV CERTIFICATE_KEYNAME project-example-com.key
