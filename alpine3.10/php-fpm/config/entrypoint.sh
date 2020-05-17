@@ -4,6 +4,8 @@ set -e
 
 ## https://github.com/docker-library/docs/tree/master/nginx#using-environment-variables-in-nginx-configuration
 envsubst '
+    ${ACCESS_LOG}
+    ${ERROR_LOG}
     ${PROJECT_HOSTNAME}
     ${NGINX_ROOT}
     ${FASTCGI_HOSTNAME}
