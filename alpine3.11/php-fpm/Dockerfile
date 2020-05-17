@@ -1,9 +1,9 @@
-ARG TIMEZONE=Europe/Prague
-
 FROM nginx:1.18-alpine
 
-ENV ACCESS_LOG=${UNSET}
-ENV ERROR_LOG=${UNSET}
+ARG TIMEZONE=Europe/Prague
+
+ENV ACCESS_LOG /dev/stdout
+ENV ERROR_LOG /dev/stderr
 ENV PROJECT_HOSTNAME project.example.com
 ENV NGINX_ROOT /var/www/html/public
 ENV FASTCGI_HOSTNAME php-fpm
