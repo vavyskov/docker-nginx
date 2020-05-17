@@ -1,6 +1,6 @@
 ARG TIMEZONE=Europe/Prague
 
-FROM nginx:1.17.9-alpine
+FROM nginx:1.18-alpine
 
 ENV ACCESS_LOG=${UNSET}
 ENV ERROR_LOG=${UNSET}
