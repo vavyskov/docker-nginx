@@ -1,6 +1,6 @@
 FROM nginx:1.18-alpine
 
-ARG TIMEZONE=Europe/Prague
+ARG TZ=Europe/Prague
 
 ENV ACCESS_LOG /dev/stdout
 ENV ERROR_LOG /dev/stderr
@@ -15,7 +15,8 @@ ENV CERTIFICATE_KEYNAME project-example-com.key
 RUN echo "Setting the timezone..." \
 &&  apk add --no-cache --virtual .build-deps \
         tzdata \
-&&  cp /usr/share/zoneinfo/${TIMEZONE} /etc/localtime \
+&&  cp /usr/share/zoneinfo/${TZ} /etc/localtime \
+#&&  ln -sf /usr/share/zoneinfo/${TZ} /etc/localtime \
 &&  apk del --purge .build-deps
 
 COPY config/nginx.conf /etc/nginx/
