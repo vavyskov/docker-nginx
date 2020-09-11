@@ -15,5 +15,10 @@ envsubst '
     ${CERTIFICATE_KEYNAME}
 ' < /etc/nginx/conf.d/default.template > /etc/nginx/conf.d/default.conf
 
+## TimeZone (default is Europe/Prague)
+if [ "${TIME_ZONE}" = "UTC" ]; then
+    rm /etc/localtime
+fi
+
 ## Make the entrypoint a pass through that then runs the docker command (redirect all input arguments)
 exec "$@"

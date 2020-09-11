@@ -2,6 +2,7 @@ FROM nginx:1.17.9-alpine
 
 ARG TZ=Europe/Prague
 
+ENV TIME_ZONE ${TZ}
 ENV ACCESS_LOG /dev/stdout
 ENV ERROR_LOG /dev/stderr
 ENV PROJECT_HOSTNAME project.example.com
